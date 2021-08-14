@@ -1,0 +1,48 @@
+def is_valid_walk(walk):
+
+    final = 10
+    steps = 0
+    back = 0
+    road = []
+    
+    for i in walk:
+        if len(road)<5:
+            if i == "n":
+                steps = steps+1
+                road.append(i)
+            elif i == "s":
+                steps = steps +2
+                road.append(i)
+            elif i == "w":
+                steps = steps +3
+                road.append(i)
+            elif i == "e":
+                steps = steps + 4
+                road.append(i)
+        else:
+            if i == "n":
+                back = back+1
+                road.append(i)
+            elif i == "s":
+                back = back +2
+                road.append(i)
+            elif i == "w":
+                back = back +3
+                road.append(i)
+            elif i == "e":
+                back = back + 4
+                road.append(i)
+#     print(steps)
+#     print(back)
+#     print(road)
+#     print(len(walk))
+    if (steps - back) <=0 and len(walk)<=10:
+        return True
+    else:
+        return False
+        
+                    
+        
+            
+
+
